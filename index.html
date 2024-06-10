@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <title>Magic Run: Orc Invasion</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <script src="./classes/world.class.js"></script>
+    <script src="./classes/drawable-object.class.js"></script>
+    <script src="./classes/moveable-object.class.js"></script>
+    <script src="./classes/status-bar.class.js"></script>
+    <script src="./classes/mana-bar.class.js"></script>
+    <script src="./classes/crystal-loot-bar.class.js"></script>
+    <script src="./classes/hp-bar.class.js"></script>
+    <script src="./classes/character.class.js"></script>
+    <script src="./classes/cloud.class.js"></script>
+    <script src="./classes/background-object.class.js"></script>
+    <script src="./classes/minion.class.js"></script>
+    <script src="./classes/endboss-hp-bar.class.js"></script>
+    <script src="./classes/minion2.class.js"></script>
+    <script src="./classes/fireable-object.class.js"></script>
+    <script src="./classes/collectable-object.class.js"></script>
+    <script src="./classes/mana-potion-loot-object.class.js"></script>
+    <script src="./classes/crystal-loot-object.class.js"></script>
+    <script src="./classes/keyboard.class.js"></script>
+    <script src="./classes/level.class.js"></script>
+    <script src="./classes/endboss.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./js/sounds.js"></script>
+    <script src="./js/game.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-32x32.png">
+</head>
+
+<body id="body">
+    <div class="title_container">
+        <img class="gametitle_border" src="./img/border_gametitle/border_for_gametitle.png" alt="">
+        <h1>Magic Run : Orc Invasion</h1>
+    </div>
+    <div class="game_container">
+        <img class="startscreen" id="startscreen" src="./img/startscreen/startscreen.jpg" alt="">
+        <canvas id="canvas" width="720" height="480"></canvas>
+        <div class="startscreen_setting_buttons">
+            <img onclick="unmuteSound()" class="button d_none" id="volumeOffButton"
+                src="./img/game_buttons/volume_off.png" alt="">
+            <img onclick="muteSound()" class="button d_none" id="volumeOnButton" src="./img/game_buttons/volume_on.png"
+                alt="">
+            <img onclick="openMenu()" class="button d_none" id="settingsButton" src="./img/game_buttons/settings.png"
+                alt="">
+            <img onclick="fullScreen()" class="startscreen_full_screen_button" id="fullScreenButton"
+                src="./img/game_buttons/full_screen.png" alt="">
+            <img onclick="openStory()" class="button" id="storyButton" src="./img/game_buttons/story.png" alt="">
+            <img onclick="openInstructions()" class="button" id="infoButton" src="./img/game_buttons/info.png" alt="">
+        </div>
+        <div class="new_game_button_container">
+            <img onclick="newGame()" class="new_game_button" id="newGameButton" src="./img/game_buttons/new_game.png"
+                alt="">
+        </div>
+        <div class="instructions_container">
+            <img onclick="closeInstructions()" class="close_button" src="./img/game_buttons/x.png" alt="">
+        </div>
+        <div class="instructions_container_mobile">
+            <img onclick="closeInstructions()" class="close_button" src="./img/game_buttons/x.png" alt="">
+        </div>
+        <div class="story_container">
+            <img onclick="closeStory()" class="close_button" src="./img/game_buttons/x.png" alt="">
+        </div>
+        <div class="menu_container">
+            <img onclick="closeMenu()" class="close_button" src="./img/game_buttons/x.png" alt="">
+            <div class="menu_buttons_container">
+                <img onclick="homeButton()" class="menu_button" src="./img/game_buttons/home.png" alt="">
+                <img onclick="restartGame()" class="menu_button" src="./img/game_buttons/restart.png" alt="">
+                <img onclick="closeMenu()" class="menu_button" src="./img/game_buttons/continue.png" alt="">
+                <img onclick="openCredits()" class="menu_button" src="./img/game_buttons/credits.png" alt="">
+            </div>
+        </div>
+        <div class="credits_container">
+            <img onclick="closeCredits()" class="close_button" src="./img/game_buttons/x.png" alt="">
+        </div>
+        <div class="mobile_buttons">
+            <div class="movement_button_container">
+                <img class="game_button left_button" id="btnLeft" src="./img/game_buttons/left.png" alt="">
+                <img class="game_button right_button" id="btnRight" src="./img/game_buttons/right.png" alt="">
+            </div>
+            <div class="jump_and_fire_button_container">
+                <img class="game_button jump_button" id="btnJump" src="./img/game_buttons/top.png" alt="">
+                <img class="game_button attack_button" id="btnAttack" src="./img/game_buttons/fire.png" alt="">
+            </div>
+        </div>
+        <div class="losescreen_container" id="youDied">
+            <div class="restart_button_container_win">
+                <img onclick="restartGame()" class="restart" src="./img/game_buttons/restart.png" alt="">
+            </div>
+        </div>
+        <div class="winscreen_container" id="youWin">
+            <div class="restart_button_container_win">
+                <img onclick="restartGame()" class="restart_win" src="./img/game_buttons/restart.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="blur_overlay"></div>
+    <img class="rotate_your_phone" src="./img/responsive/rotateyourphone.png" alt="">
+    <a class="legal_notice "href="./html_templates/legal_notice.html">Legal Notice</a>
+</body>
+
+</html>

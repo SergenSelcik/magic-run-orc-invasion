@@ -1,0 +1,13 @@
+let ingame_music = new Audio('./audio/runthrough.mp3');
+let boss_music = new Audio('./audio/bossmusic.mp3');
+let running_sound = new Audio('./audio/running.mp3');
+let hurt_sound = new Audio('./audio/hurt.mp3');
+let jump_sound = new Audio('./audio/jump.mp3');
+let landing_sound = new Audio('./audio/landing.mp3');
+let drinkPotion_sound = new Audio('./audio/potion.mp3');
+let collectCrystal_sound = new Audio('./audio/loot.wav');
+let attack_sound = new Audio('./audio/attack.mp3');
+let victory_music = new Audio('./audio/victory.mp3');
+let defeat_music = new Audio('./audio/defeat.mp3');
+let jump_on_head = new Audio('./audio/jump_on_head.mp3');
+let boss_roar = new Audio('./audio/boss_roar.wav');

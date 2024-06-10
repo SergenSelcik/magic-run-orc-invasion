@@ -1,0 +1,412 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    overflow:unset;
+    position: relative;
+    cursor: default;
+    background-image: url(../img/background/PNG/Mountains/Bright/mountains2.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+.title_container {
+    display: flex;
+    flex: 1;
+    min-width: 400px;
+    max-height: 200px;
+}
+
+.gametitle_border {
+    width: 1000px;
+    height: 200px;
+    display: flex;
+    flex: 1;
+}
+
+@font-face {
+    font-family: 'Warpriest';
+    src: url(../font/WarPriestRegular-PanE.ttf);
+}
+
+.blur_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(25px);
+    z-index: -1;
+}
+
+h1 {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    height: 52px;
+    margin: 0;
+    font-family: 'Warpriest';
+    font-size: 41px;
+    background: linear-gradient(to bottom, rgb(68, 63, 55), #ff0000a1, rgb(255, 227, 126));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #000000;
+}
+
+.game_container {
+    height: 480px;
+    width: 720px;
+    position: relative;
+}
+
+canvas {
+    background-color: black;
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: absolute;
+}
+
+.startscreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: block;
+}
+
+.new_game_button_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 300px;
+}
+
+.new_game_button {
+    z-index: 2;
+    width: 200px;
+    cursor: pointer;
+}
+
+.startscreen_setting_buttons {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+}
+
+.startscreen_full_screen_button {
+    display: none;
+    padding: 6px;
+    max-height: 35px;
+    max-width: 35px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.button{
+    padding: 6px;
+    max-height: 35px;
+    max-width: 35px;
+    z-index: 2;
+    cursor: pointer; 
+}
+
+.d_none{
+    display: none;
+}
+
+.instructions_container {
+    height: 350px;
+    width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    display: none;
+    background-image: url(../img/instructions/instructions.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+.instructions_container_mobile {
+    height: 350px;
+    width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    display: none;
+    background-image: url(../img/instructions/instructions_mobile.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+.instructions {
+    width: 550px;
+    height: 350px;
+}
+
+.story_container {
+    height: 350px;
+    width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    display: none;
+    background-image: url(../img/story/story.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+.story {
+    width: 550px;
+    height: 350px;
+}
+
+.close_button {
+    display: flex;
+    justify-content: end;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+}
+
+.menu_container {
+    width: 200px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    display: none;
+    background-image: url(../img/menu/menu.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+.menu_buttons_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    top: 100px;
+}
+
+.restart{
+    height: 70px;
+    cursor: pointer; 
+    display: none;
+    transition:all 0.2s ease;
+}
+
+.restart_win{
+    height: 70px;
+    cursor: pointer; 
+    display: none;
+    transition:all 0.2s ease;
+}
+
+.restart_button_container{
+    z-index: 11;
+    position: absolute;
+    z-index: 11;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+.restart_button_container_win{
+    z-index: 11;
+    position: absolute;
+    z-index: 11;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+.menu_button{
+    height: 40px;
+    cursor: pointer; 
+}
+
+.menu{
+    width: auto;
+    height: 350px;
+}
+
+.credits_container {
+    width: 200px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    display: none;
+    background-image: url(../img/menu/credits.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+.rotate_your_phone {
+    display: none;
+}
+
+.mobile_buttons{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.game_button{
+    padding: 6px;
+    max-height: 70px;
+    max-width: 70px;
+    opacity: 0.5; 
+}
+
+.movement_button_container{
+    width: 215px;
+    height: 150px;
+    display: flex;
+    gap: 20px;
+    z-index: 3;
+}
+
+.jump_and_fire_button_container{
+    width: 185px;
+    height:150px;
+    display: flex;
+    gap: 20px;
+    z-index: 3;
+}
+
+.left_button{
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+}
+
+.right_button{
+    position: absolute;
+    left: 115px;
+    bottom: 0px;
+}
+
+.jump_button{
+    position: absolute;
+    bottom: 0px;
+    right: 85px;
+}
+
+.attack_button{
+    position: absolute;
+    bottom: 70px;
+    right: 15px;
+}
+
+.legal_notice{
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    z-index: 1;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    height: 52px;
+    margin: 0;
+    font-family: 'Warpriest';
+    font-size: 30px;
+    background: linear-gradient(to bottom, rgb(68, 63, 55), #ff0000a1, rgb(255, 227, 126));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #000000;
+    transition: all 0.2s ease-in-out;
+}
+
+.legal_notice:hover{
+    -webkit-text-stroke: 1px #000000;
+    font-size: 34px;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.winscreen_container{
+    background-image: url(../img/youwin_youlose/youwin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px;
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100.5%;
+    width: 100.5%;
+}
+
+.losescreen_container{
+    background-image: url(../img/youwin_youlose/youdied.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px;
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100.5%;
+    width: 100.5%;
+}
